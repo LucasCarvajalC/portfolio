@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@theme {
+    /* ── Colores de marca ── */
+    --color-black:       #0F0F0F;
+    --color-black-soft:  #1A1A1A;
+    --color-surface:     #1C1F21;
+    --color-muted:       #484848;
+    --color-border:      #999999;
+
+    --color-blue-raven: #00349E;
+    --color-blue-mid:   #007AD7;
+    --color-blue-dark:  #001E5A;
+    --color-blue-deep:  #00143E;
+
+    --color-white-soft: #F8F9FA;
+
+    /* ── Tipografía ── */
+    --font-sans: 'Sora', ui-sans-serif, system-ui, sans-serif;
+
+    --radius-card:   20px;
+    --radius-modal:  38px;
+    --radius-badge:  29.5px;
+
+    --animate-slide-up:   slide-up 0.3s ease-out;
+    --animate-slide-left: slide-left 0.3s ease-out;
+    --animate-pop:        pop 0.25s ease-in-out;
+
+    --text-tbig-title: 5rem;
+    --text-big-title-v: 4rem;
+    --text-title: 2.7rem;
+    --text-page-title: 1.8rem;
+    --text-subtitle: 1.40rem;
+    --text-body: 1.25rem;
+    --text-small: 0.875rem;
+    --text-tiny: 0.75rem;
+
+    --animate-floating: floating 3s ease-in-out infinite;
+    --animate-reveal-card: reveal-card 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes floating{
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes reveal-card {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* ── Aplicar fuente a TODO globalmente ── */
+@layer base {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        font-family: var(--font-sans);
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background-color: var(--color-black);
+    }
+}
